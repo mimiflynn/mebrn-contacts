@@ -18,7 +18,7 @@ module.exports = function (grunt) {
           transform: ['reactify']
         },
         files: {
-          'public/js/bundle.js': 'source/scripts/app.js'
+          '../public/js/app.js': 'source/scripts/app.js'
         }
       }
     },
@@ -60,6 +60,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.registerTask('test', ['jshint']);
+  grunt.registerTask('build', ['jshint', 'compass', 'browserify']);
   grunt.registerTask('default', ['concurrent:target']);
 
 };

@@ -6,5 +6,5 @@ var model = require('./model.js');
 
 module.exports = Backbone.Collection.extend({
   model: model,
-  url: 'http://localhost:4000/contact'
+  url: 'http://localhost:3000/contacts'
 });

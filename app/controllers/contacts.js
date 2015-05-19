@@ -8,6 +8,15 @@ var mongoose = require('mongoose'),
   _ = require('lodash');
 
 
+exports.index = function (req, res) {
+  Contact.list({}, function (err, contacts) {
+    res.render('contacts', {
+      title: 'List of contacts',
+      contacts: contacts
+    })
+  })
+}
+
 /**
  * Find contact by id
  */
