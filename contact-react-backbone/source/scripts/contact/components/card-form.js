@@ -1,4 +1,5 @@
 var React = require('react');
+var formHelper = require('../../helpers/form-helper.js');
 
 /* CardForm
   upon submit will fire a JS CustomEvent() of 'cardSubmit' loaded with data
@@ -12,34 +13,33 @@ var React = require('react');
 */
 
 module.exports = React.createClass({
+  mixins: [
+    formHelper
+  ],
+
   handleSubmit: function (e) {
-    e.preventDefault();
+    this.handleSubmitHelper(e);
+  },
 
-    var _this = this;
-    var contact = {};
-    var keys = Object.keys(this.refs);
-
-    // build the contact object out of the form data
-    // to send to the app controller
-    keys.forEach(function (e, i, a) {
-      contact[e] = React.findDOMNode(_this.refs[e]).value.trim();
-    });
-
-    this.onFormSubmit(contact);
-    
-    keys.forEach(function (e, i, a) {
-      React.findDOMNode(_this.refs[e]).value = '';
-    });
+  getInitialState: function () {
+    return {
+      formSent: false
+    };
   },
 
   onFormSubmit: function (data) {
     var event = new CustomEvent('cardSubmit', {detail: data}, false);
     React.findDOMNode(this).dispatchEvent(event);
+    this.setState({
+      formSent: true
+    });
   },
 
   render: function () {
+    var formSent = this.state.formSent;
     return (
       <form className="cardForm" onSubmit={this.handleSubmit}>
+        <div style={{display: formSent ? 'block' : 'none'}}>Sent!</div>
         <input type="hidden" ref="_csrf" value={window.contactsToken}/>
         <input type="text" placeholder="First" ref="firstName"/>
         <input type="text" placeholder="Last" ref="lastName"/>

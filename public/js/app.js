@@ -43917,6 +43917,7 @@ module.exports = Backbone.Collection.extend({
 
 },{"./model.js":168,"backbone":1,"jquery":4}],163:[function(require,module,exports){
 var React = require('react');
+var formHelper = require('../../helpers/form-helper.js');
 
 /* CardForm
   upon submit will fire a JS CustomEvent() of 'cardSubmit' loaded with data
@@ -43930,34 +43931,33 @@ var React = require('react');
 */
 
 module.exports = React.createClass({displayName: "exports",
+  mixins: [
+    formHelper
+  ],
+
   handleSubmit: function (e) {
-    e.preventDefault();
+    this.handleSubmitHelper(e);
+  },
 
-    var _this = this;
-    var contact = {};
-    var keys = Object.keys(this.refs);
-
-    // build the contact object out of the form data
-    // to send to the app controller
-    keys.forEach(function (e, i, a) {
-      contact[e] = React.findDOMNode(_this.refs[e]).value.trim();
-    });
-
-    this.onFormSubmit(contact);
-    
-    keys.forEach(function (e, i, a) {
-      React.findDOMNode(_this.refs[e]).value = '';
-    });
+  getInitialState: function () {
+    return {
+      formSent: false
+    };
   },
 
   onFormSubmit: function (data) {
     var event = new CustomEvent('cardSubmit', {detail: data}, false);
     React.findDOMNode(this).dispatchEvent(event);
+    this.setState({
+      formSent: true
+    });
   },
 
   render: function () {
+    var formSent = this.state.formSent;
     return (
       React.createElement("form", {className: "cardForm", onSubmit: this.handleSubmit}, 
+        React.createElement("div", {style: {display: formSent ? 'block' : 'none'}}, "Sent!"), 
         React.createElement("input", {type: "hidden", ref: "_csrf", value: window.contactsToken}), 
         React.createElement("input", {type: "text", placeholder: "First", ref: "firstName"}), 
         React.createElement("input", {type: "text", placeholder: "Last", ref: "lastName"}), 
@@ -43975,7 +43975,7 @@ module.exports = React.createClass({displayName: "exports",
 });
 
 
-},{"react":160}],164:[function(require,module,exports){
+},{"../../helpers/form-helper.js":169,"react":160}],164:[function(require,module,exports){
 var React = require('react');
 var Card = require('./card');
 
@@ -44114,4 +44114,35 @@ module.exports = Backbone.Model.extend({
   }
 });
 
-},{"backbone":1,"jquery":4}]},{},[161]);
+},{"backbone":1,"jquery":4}],169:[function(require,module,exports){
+var React = require('react');
+
+module.exports = {
+  setFormData: function (data) {
+    this.formData = data;
+    this.onFormSubmit(data);
+  },
+
+  formData: {},
+
+  // gets data out of form and adds it to the formData
+  handleSubmitHelper: function (e) {
+    e.preventDefault();
+
+    var _this = this;
+    var data = {};
+    var keys = Object.keys(this.refs);
+
+    keys.forEach(function (e, i, a) {
+      data[e] = React.findDOMNode(_this.refs[e]).value.trim();
+    });
+
+    this.setFormData(data);
+    
+    keys.forEach(function (e, i, a) {
+      React.findDOMNode(_this.refs[e]).value = '';
+    });
+  }
+};
+
+},{"react":160}]},{},[161]);
