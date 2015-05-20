@@ -43958,6 +43958,7 @@ module.exports = React.createClass({displayName: "exports",
   render: function () {
     return (
       React.createElement("form", {className: "cardForm", onSubmit: this.handleSubmit}, 
+        React.createElement("input", {type: "hidden", ref: "_csrf", value: window.contactsToken}), 
         React.createElement("input", {type: "text", placeholder: "First", ref: "firstName"}), 
         React.createElement("input", {type: "text", placeholder: "Last", ref: "lastName"}), 
         React.createElement("input", {type: "text", placeholder: "Street Address", ref: "address"}), 
@@ -43982,7 +43983,7 @@ module.exports = React.createClass({displayName: "exports",
   render: function () {
     var cards = this.props.contacts.map(function (contact, index) {
       return (
-        React.createElement("li", null, React.createElement(Card, {data: contact, key: index}))
+        React.createElement("li", {key: contact._id}, React.createElement(Card, {data: contact}))
       );
     });
     return (
@@ -44102,10 +44103,11 @@ module.exports = Backbone.Model.extend({
     country: 'Country',
     zip: '12345',
     phone: '123 456 7890',
-    email: 'name@domainname.com'
+    email: 'name@domainname.com',
+    _csrf: null
   },
 
-  url: 'http://localhost:3000/contact',
+  url: 'http://localhost:3000/contacts',
 
   initialize: function () {
 

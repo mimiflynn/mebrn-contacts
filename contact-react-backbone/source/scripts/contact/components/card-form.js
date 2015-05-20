@@ -40,6 +40,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <form className="cardForm" onSubmit={this.handleSubmit}>
+        <input type="hidden" ref="_csrf" value={window.contactsToken}/>
         <input type="text" placeholder="First" ref="firstName"/>
         <input type="text" placeholder="Last" ref="lastName"/>
         <input type="text" placeholder="Street Address" ref="address"/>

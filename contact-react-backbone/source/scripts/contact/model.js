@@ -12,7 +12,8 @@ module.exports = Backbone.Model.extend({
     country: 'Country',
     zip: '12345',
     phone: '123 456 7890',
-    email: 'name@domainname.com'
+    email: 'name@domainname.com',
+    _csrf: null
   },
 
   url: 'http://localhost:3000/contacts',
