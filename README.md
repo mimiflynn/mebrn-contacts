@@ -1,3 +1,11 @@
+# Contacts
+
+This started off as a MEAN.io contacts app, but I wanted to learn how to use Backbone and React together and here we are now.
+
+## Boilerplate Info
+
+This app was built using the [node express and mongoose boilerplate.](https://github.com/madhums/node-express-mongoose) See readme below
+
 [![Build Status](https://img.shields.io/travis/madhums/node-express-mongoose.svg?style=flat)](https://travis-ci.org/madhums/node-express-mongoose)
 [![Gittip](https://img.shields.io/gratipay/madhums.svg?style=flat)](https://www.gratipay.com/madhums/)
 [![Dependencies](https://img.shields.io/david/madhums/node-express-mongoose.svg?style=flat)](https://david-dm.org/madhums/node-express-mongoose)
