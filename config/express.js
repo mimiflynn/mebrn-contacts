@@ -63,9 +63,14 @@ module.exports = function (app, passport) {
   }
 
   // set views path, template engine and default layout
-  app.engine('html', swig.renderFile);
+  // app.engine('html', swig.renderFile);
+  // app.set('views', config.root + '/app/views');
+  // app.set('view engine', 'html');
+
+  // set views to react templates
   app.set('views', config.root + '/app/views');
-  app.set('view engine', 'html');
+  app.set('view engine', 'jsx');
+  app.engine('jsx', require('express-react-views').createEngine());
 
   // expose package.json to views
   app.use(function (req, res, next) {

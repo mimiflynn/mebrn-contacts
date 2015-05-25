@@ -2,6 +2,9 @@ var React = require('react');
 var Card = require('./card');
 
 module.exports = React.createClass({
+  propTypes: {
+    contacts: React.Proptypes.array
+  },
   render: function () {
     var cards = this.props.contacts.map(function (contact, index) {
       return (

@@ -3,9 +3,8 @@
  * Module dependencies.
  */
 
-var mongoose = require('mongoose');
-var home = require('home');
 var contacts = require('contacts');
+var home = require('home');
 var users = require('users');
 var auth = require('./middlewares/authorization');
 

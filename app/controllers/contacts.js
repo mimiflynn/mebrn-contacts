@@ -7,7 +7,6 @@ var mongoose = require('mongoose'),
   Contact = mongoose.model('Contact'),
   _ = require('lodash');
 
-
 exports.index = function (req, res) {
   Contact.list({}, function (err, contacts) {
     res.render('contacts', {

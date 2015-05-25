@@ -28,6 +28,8 @@ module.exports = Backbone.View.extend({
   },
 
   render: function () {
+
+    // ToDo: check if already rendered serverside before rendering
     this.renderList();
 
     var form = React.render(React.createElement(CardForm), document.getElementById('newCard'));
