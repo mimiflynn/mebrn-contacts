@@ -6,7 +6,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <DefaultLayout title={this.props.title}>
-        <h1>500 - {this.props.title}</h1>
+        <h1>404 - {this.props.title}</h1>
         <pre>
           { this.props.error }
         </pre>
