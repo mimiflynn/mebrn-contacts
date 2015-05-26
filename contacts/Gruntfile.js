@@ -62,7 +62,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('build', ['jshint', 'compass', 'browserify']);
-  grunt.registerTask('default', ['concurrent:target']);
+  grunt.registerTask('default', ['jshint', 'compass', 'browserify']);
 
 };

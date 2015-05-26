@@ -2,9 +2,44 @@
 
 This started off as a MEAN.io contacts app, but I wanted to learn how to use Backbone and React together and here we are now.
 
-## Boilerplate Info
+# Contacts App made with React and Backbone
 
-This app was built using the [node express and mongoose boilerplate.](https://github.com/madhums/node-express-mongoose) See readme below
+## POC
+
+Goal is to exhibit that:
+- Backbone for models and collections
+- React for views and controllers
+
+## Requirements
+
+```
+gem install compass
+brew install mongodb
+npm install -g grunt-cli
+npm install -g browserify
+```
+
+Be sure mongoDB is running. If you're on a Mac (as I assumed with the `brew` command) there is a preference pane to start mongoDB [here](http://blog.mongodb.org/post/28925264384/macosx-preferences-pane-for-mongodb).
+
+## Development
+
+Run `npm install` from this directory and and `npm start`. Change to the `/contact/` directory and do another `npm install` then `grunt` for initial build then `grunt watch` to watch for changes.
+
+## Approach
+
+Attempting to make the components independent of the framework, so, in this case, no Backbone code in the components.
+
+This will allow the components to work on their own and can be available to teams needing the component's functionality but using a framework that better suites their needs.
+
+## To Do
+- refactor to a Flux like organizational structure
+- add CRS
+
+# Boilerplate Info
+
+This app was built using the [node express and mongoose boilerplate.](https://github.com/madhums/node-express-mongoose) [This is an example app using the boilderplate.](https://github.com/madhums/node-express-mongoose-demo)
+
+See boilerplate readme below.
 
 [![Build Status](https://img.shields.io/travis/madhums/node-express-mongoose.svg?style=flat)](https://travis-ci.org/madhums/node-express-mongoose)
 [![Gittip](https://img.shields.io/gratipay/madhums.svg?style=flat)](https://www.gratipay.com/madhums/)
