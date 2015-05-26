@@ -1,6 +1,7 @@
 var React = require('react');
 var LinkedStateMixin = require('react/lib/LinkedStateMixin');
 
+
 /* CardForm
   upon submit will fire a JS CustomEvent() of 'cardSubmit' loaded with data
   be sure to add an event listener like so:
@@ -41,6 +42,7 @@ module.exports = React.createClass({
 
   onFormSubmit: function (data) {
     console.log('about to send event:', data);
+    console.log('this: ', this);
     var trigger = new CustomEvent('cardSubmit', {detail: data}, false);
     var node = React.findDOMNode(this);
     node.dispatchEvent(trigger);

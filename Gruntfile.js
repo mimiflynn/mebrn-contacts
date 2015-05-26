@@ -20,12 +20,12 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          '../public/js/app.js': 'source/scripts/app.js'
+          'public/js/app.js': 'contacts/source/scripts/app.js'
         }
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'source/scripts/**/*.js'],
+      files: ['Gruntfile.js', 'contacts/source/scripts/**/*.js'],
       options: {
         globals: {
           console: true
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
     },
     watch: {
       dev: {
-        files: ['<%= jshint.files %>', 'source/**/*.jsx', 'source/sass/**/*.scss', 'source/**/*.js', '../app/views/**/*.jsx'],
+        files: ['<%= jshint.files %>', 'contacts/source/**/*.jsx', 'contacts/source/sass/**/*.scss', 'contacts/source/**/*.js', 'app/views/**/*.jsx'],
         tasks: ['jshint', 'compass', 'browserify']
       },
     },

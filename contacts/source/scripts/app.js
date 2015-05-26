@@ -2,7 +2,7 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 Backbone.$ = $;
 
-var ListContacts = require('./contact/controller.js');
+var ListContacts = require('./contact/controller.jsx');
 
 $(document).ready(function () {
   'use strict';

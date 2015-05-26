@@ -67,22 +67,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 1, ../../contact-react-backbone/source/sass/contact/_card.scss */
+/* line 1, ../../contacts/source/sass/contact/_card.scss */
 .card {
   margin-bottom: 1em;
 }
-/* line 3, ../../contact-react-backbone/source/sass/contact/_card.scss */
+/* line 3, ../../contacts/source/sass/contact/_card.scss */
 .card h2 {
   font-weight: bold;
 }
 
-/* line 2, ../../contact-react-backbone/source/sass/contact/_cardForm.scss */
+/* line 2, ../../contacts/source/sass/contact/_cardForm.scss */
 .cardForm input {
   display: block;
   margin-bottom: 0.5em;
 }
 
-/* line 10, ../../contact-react-backbone/source/sass/screen.scss */
+/* line 10, ../../contacts/source/sass/screen.scss */
 body {
   margin: 1em;
 }

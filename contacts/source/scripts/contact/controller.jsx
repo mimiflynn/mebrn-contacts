@@ -28,18 +28,20 @@ module.exports = Backbone.View.extend({
   },
 
   render: function () {
-    if (document.getElementById('newCard')) {
+    if (document.getElementById('content')) {
       this.renderList();
     }
     if (document.getElementById('newCard')) {
-      var form = React.render(React.createElement(CardForm), document.getElementById('newCard'));
-      React.findDOMNode(form).addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
+      this.renderCardForm();
     }
     return this;
   },
 
   renderCardForm: function () {
-    var form = React.render(React.createElement(CardForm), document.getElementById('newCard'));
+    var data = {
+      csrf: window.csrf
+    }
+    var form = React.render(React.createElement(CardForm, data), document.getElementById('newCard'));
     React.findDOMNode(form).addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
   },
 
