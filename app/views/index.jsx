@@ -12,6 +12,7 @@ var IndexLayout = React.createClass({
         <h1>{this.props.title}</h1>
         <CardList contacts={this.props.contacts}/>
         <CardForm csrf={this.props.csrf_token}/>
+        <script src="/js/app.js"></script>
       </DefaultLayout>
     );
   }

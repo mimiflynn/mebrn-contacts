@@ -14,8 +14,10 @@ module.exports = function (grunt) {
     browserify: {
       dev: {
         options: {
-          debug: true,
-          transform: ['reactify']
+          transform: ['reactify'],
+          browserifyOptions: {
+            debug: true
+          }
         },
         files: {
           '../public/js/app.js': 'source/scripts/app.js'
@@ -40,7 +42,7 @@ module.exports = function (grunt) {
     },
     watch: {
       dev: {
-        files: ['<%= jshint.files %>', 'source/**/*.jsx', 'source/sass/**/*.scss', 'source/**/*.js'],
+        files: ['<%= jshint.files %>', 'source/**/*.jsx', 'source/sass/**/*.scss', 'source/**/*.js', '../app/views/**/*.jsx'],
         tasks: ['jshint', 'compass', 'browserify']
       },
     },

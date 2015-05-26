@@ -21,7 +21,7 @@ module.exports = {
     });
 
     this.setFormData(data);
-    
+
     keys.forEach(function (e, i, a) {
       React.findDOMNode(_this.refs[e]).value = '';
     });

@@ -28,11 +28,13 @@ module.exports = Backbone.View.extend({
   },
 
   render: function () {
-
-    // ToDo: check if already rendered serverside before rendering
-    this.renderList();
-    this.renderCardForm();
-
+    if (document.getElementById('newCard')) {
+      this.renderList();
+    }
+    if (document.getElementById('newCard')) {
+      var form = React.render(React.createElement(CardForm), document.getElementById('newCard'));
+      React.findDOMNode(form).addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
+    }
     return this;
   },
 
@@ -49,6 +51,7 @@ module.exports = Backbone.View.extend({
   },
 
   onCardSubmit: function (e) {
+    console.log('saving to collection');
     var _this = this;
     var formData = e.detail;
     var contact = new Model(formData);
