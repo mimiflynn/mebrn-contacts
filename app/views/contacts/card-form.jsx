@@ -17,10 +17,6 @@ module.exports = React.createClass({
     LinkedStateMixin
   ],
 
-  handleSubmit: function (e) {
-    this.handleSubmitHelper(e);
-  },
-
   getInitialState: function () {
     return {
       firstName: '',
