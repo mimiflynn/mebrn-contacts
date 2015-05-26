@@ -28,12 +28,12 @@ module.exports = Backbone.View.extend({
   },
 
   render: function () {
-    if (document.getElementById('content')) {
-      this.renderList();
-    }
-    if (document.getElementById('newCard')) {
-      this.renderCardForm();
-    }
+    
+    this.renderList();
+    this.renderCardForm();
+
+    document.addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
+
     return this;
   },
 
@@ -41,15 +41,18 @@ module.exports = Backbone.View.extend({
     var data = {
       csrf: window.csrf
     }
-    var form = React.render(React.createElement(CardForm, data), document.getElementById('newCard'));
-    React.findDOMNode(form).addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
+    if (document.getElementById('card-form') !== null) {
+      React.render(React.createElement(CardForm, data), document.getElementById('card-form'));
+    }
   },
 
   renderList: function () {
     var data = {
       contacts: this.collection.toJSON()
     };
-    React.render(React.createElement(CardList, data), document.getElementById('content'));
+    if (document.getElementById('card-list') !== null) {
+      React.render(React.createElement(CardList, data), document.getElementById('card-list'));
+    }
   },
 
   onCardSubmit: function (e) {

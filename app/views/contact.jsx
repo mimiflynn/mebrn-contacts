@@ -10,8 +10,8 @@ var ContactsLayout = React.createClass({
     return (
       <DefaultLayout title={this.props.title}>
         <h1>{this.props.title}</h1>
-        <div id="content"/>
-        <div id="newCard"/>
+        <div id="card-list"/>
+        <div id="card-form"/>
         <script src="/js/app.js"></script>
         <script dangerouslySetInnerHTML={{__html: _csrf}} />
       </DefaultLayout>

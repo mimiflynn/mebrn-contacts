@@ -44,8 +44,7 @@ module.exports = React.createClass({
     console.log('about to send event:', data);
     console.log('this: ', this);
     var trigger = new CustomEvent('cardSubmit', {detail: data}, false);
-    var node = React.findDOMNode(this);
-    node.dispatchEvent(trigger);
+    document.dispatchEvent(trigger);
     this.setState({
       formSent: true
     });
