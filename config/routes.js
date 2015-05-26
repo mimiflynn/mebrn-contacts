@@ -14,7 +14,8 @@ var auth = require('./middlewares/authorization');
 
 module.exports = function (app, passport) {
 
-  app.get('/', home.index);
+  app.get('/', home.serverside);
+  app.get('/clientside', home.clientside);
 
   // user routes
   app.get('/login', users.login);

@@ -1,5 +1,5 @@
 var React = require('react');
-var formHelper = require('../helpers/form-helper.js');
+var formHelper = require('../helpers/form-helper.jsx');
 
 /* CardForm
   upon submit will fire a JS CustomEvent() of 'cardSubmit' loaded with data
@@ -40,7 +40,7 @@ module.exports = React.createClass({
     return (
       <form className="cardForm" onSubmit={this.handleSubmit}>
         <div style={{display: formSent ? 'block' : 'none'}}>Sent!</div>
-        <input type="hidden" ref="_csrf" value={window.contactsToken}/>
+        <input type="hidden" ref="_csrf" value={this.props.csrf}/>
         <input type="text" placeholder="First" ref="firstName"/>
         <input type="text" placeholder="Last" ref="lastName"/>
         <input type="text" placeholder="Street Address" ref="address"/>

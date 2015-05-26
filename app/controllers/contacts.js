@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
 exports.index = function (req, res) {
   Contact.find().sort('-created').populate('user', 'name username').exec(function (err, contact) {
     res.render('index', {
-      title: 'List of contacts',
+      title: 'Server Side Rendering',
       contacts: contact
     })
   });

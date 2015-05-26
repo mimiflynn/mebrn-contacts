@@ -4,10 +4,10 @@ Backbone.$ = $;
 var _ = require('lodash');
 var React = require('react');
 
-var Collection = require('./collection.js');
-var Model = require('./model.js');
-var CardList = require('./components/components.js').cardList;
-var CardForm = require('./components/components.js').cardForm;
+var Collection = require('./collection');
+var Model = require('./model');
+var CardList = require('./components').cardList;
+var CardForm = require('./components').cardForm;
 
 module.exports = Backbone.View.extend({
   collection: new Collection(),
@@ -31,15 +31,20 @@ module.exports = Backbone.View.extend({
 
     // ToDo: check if already rendered serverside before rendering
     this.renderList();
-
-    var form = React.render(React.createElement(CardForm), document.getElementById('newCard'));
-    React.findDOMNode(form).addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
+    this.renderCardForm();
 
     return this;
   },
 
+  renderCardForm: function () {
+    var form = React.render(React.createElement(CardForm), document.getElementById('newCard'));
+    React.findDOMNode(form).addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
+  },
+
   renderList: function () {
-    var data = {contacts: this.collection.toJSON()};
+    var data = {
+      contacts: this.collection.toJSON()
+    };
     React.render(React.createElement(CardList, data), document.getElementById('content'));
   },
 
