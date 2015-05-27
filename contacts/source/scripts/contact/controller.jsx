@@ -38,20 +38,20 @@ module.exports = Backbone.View.extend({
   },
 
   renderCardForm: function () {
-    var data = {
-      csrf: window.csrf
-    }
     if (document.getElementById('card-form') !== null) {
-      React.render(React.createElement(CardForm, data), document.getElementById('card-form'));
+      React.render(
+        <CardForm csrf={window.csrf} />,
+        document.getElementById('card-form')
+      );
     }
   },
 
   renderList: function () {
-    var data = {
-      contacts: this.collection.toJSON()
-    };
     if (document.getElementById('card-list') !== null) {
-      React.render(React.createElement(CardList, data), document.getElementById('card-list'));
+      React.render(
+        <CardList contacts={this.collection.toJSON()} />,
+        document.getElementById('card-list')
+      );
     }
   },
 
