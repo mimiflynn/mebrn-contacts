@@ -7,12 +7,18 @@ var CardForm = require('./contacts/card-form.jsx');
 
 var IndexLayout = React.createClass({
   render: function () {
+
+    var cardList = React.renderToString(<CardList contacts={this.props.contacts} />),
+      cardForm = React.renderToString(<CardForm csrf={this.props.csrf_token} />),
+      _csrf = 'window.csrf = "' + this.props.csrf_token + '"';
+
     return (
       <DefaultLayout title={this.props.title}>
         <h1>{this.props.title}</h1>
-        <CardList contacts={this.props.contacts}/>
-        <CardForm csrf={this.props.csrf_token}/>
+        <div id="card-list" dangerouslySetInnerHTML={{__html: cardList}} />
+        <div id="card-form" dangerouslySetInnerHTML={{__html: cardForm}} />
         <script src="/js/app.js"></script>
+        <script dangerouslySetInnerHTML={{__html: _csrf}} />
       </DefaultLayout>
     );
   }
