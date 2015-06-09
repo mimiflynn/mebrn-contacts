@@ -28,7 +28,7 @@ module.exports = Backbone.View.extend({
   },
 
   render: function () {
-    
+
     this.renderList();
     this.renderCardForm();
 
@@ -38,21 +38,17 @@ module.exports = Backbone.View.extend({
   },
 
   renderCardForm: function () {
-    if (document.getElementById('card-form') !== null) {
-      React.render(
-        <CardForm csrf={window.csrf} />,
-        document.getElementById('card-form')
-      );
-    }
+    React.render(
+      <CardForm csrf={window.csrf} />,
+      document.getElementById('card-form')
+    );
   },
 
   renderList: function () {
-    if (document.getElementById('card-list') !== null) {
-      React.render(
-        <CardList contacts={this.collection.toJSON()} />,
-        document.getElementById('card-list')
-      );
-    }
+    React.render(
+      <CardList contacts={this.collection.toJSON()} />,
+      document.getElementById('card-list')
+    );
   },
 
   onCardSubmit: function (e) {
