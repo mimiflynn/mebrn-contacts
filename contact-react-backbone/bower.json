@@ -1,7 +1,0 @@
-{
-  "name": "contacts-react-backbone",
-  "version": "0.1.0",
-  "dependencies": {
-    "country-region-selector": "https://github.com/benkeen/country-region-selector.git"
-  }
-}

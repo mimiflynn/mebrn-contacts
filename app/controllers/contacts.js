@@ -7,14 +7,13 @@ var mongoose = require('mongoose'),
   Contact = mongoose.model('Contact'),
   _ = require('lodash');
 
-
 exports.index = function (req, res) {
-  Contact.list({}, function (err, contacts) {
-    res.render('contacts', {
-      title: 'List of contacts',
-      contacts: contacts
+  Contact.find().sort('-created').populate('user', 'name username').exec(function (err, contact) {
+    res.render('index', {
+      title: 'Server Side Rendering',
+      contacts: contact
     })
-  })
+  });
 }
 
 /**
