@@ -1,6 +1,5 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
-Backbone.$ = $;
 var _ = require('lodash');
 var React = require('react');
 
@@ -9,18 +8,24 @@ var Model = require('./model');
 var CardList = require('./components').cardList;
 var CardForm = require('./components').cardForm;
 
+Backbone.$ = $;
+
 module.exports = Backbone.View.extend({
   collection: new Collection(),
 
   initialize: function () {
     var _this = this;
 
-    this.collection.fetch({
-      success: _.bind(_this.renderList, _this)
-    }).then(function () {
-        console.log('fetch ran');
-      }
-    );
+    if (typeof window.contacts === 'undefined') {
+      this.collection.fetch({
+        success: _.bind(_this.renderList, _this)
+      }).then(function () {
+          console.log('fetch ran');
+        }
+      );
+    } else {
+      this.collection.set(window.contacts);
+    }
 
     this.listenTo(this.collection, 'add', this.renderList);
 
