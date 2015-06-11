@@ -10,6 +10,7 @@ var ContactsLayout = React.createClass({
     return (
       <DefaultLayout title={this.props.title}>
         <h1>{this.props.title}</h1>
+        <p>For server side rendering go <a href="/">here</a>.</p>
         <div id="card-list" />
         <div id="card-form" />
         <script src="/js/app.js"></script>
