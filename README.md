@@ -9,6 +9,7 @@ This started off as a MEAN.io contacts app, but I wanted to learn how to use Bac
 Goal is to exhibit that:
 - Backbone for models and collections
 - React for views and controllers
+- Server side rendering using the same code on the client and server.
 
 ## Requirements
 
@@ -23,7 +24,7 @@ Be sure mongoDB is running. If you're on a Mac (as I assumed with the `brew` com
 
 ## Development
 
-Run `npm install` from this directory and and `npm start`. Change to the `/contact/` directory and do another `npm install` then `grunt` for initial build then `grunt watch` to watch for changes.
+Run `npm install` from this directory and and `npm start` to start the server. Open a new terminal tab and run `grunt` for initial build then `grunt watch` to watch for changes.
 
 ## Approach
 
