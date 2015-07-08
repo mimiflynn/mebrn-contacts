@@ -37,14 +37,13 @@ module.exports = React.createClass({
   handleSubmit: function (e) {
     e.preventDefault();
     console.log('form data: ', this.state);
+    this.props.onCardSubmit(e);
     this.onFormSubmit(this.state);
   },
 
   onFormSubmit: function (data) {
     console.log('about to send event:', data);
     console.log('this: ', this);
-    var trigger = new CustomEvent('cardSubmit', {detail: data}, false);
-    document.dispatchEvent(trigger);
     this.setState({
       formSent: true
     });

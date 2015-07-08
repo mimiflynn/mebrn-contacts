@@ -33,27 +33,9 @@ module.exports = Backbone.View.extend({
   },
 
   render: function () {
-
     this.renderList();
     this.renderCardForm();
-
-    document.addEventListener('cardSubmit', _.bind(this.onCardSubmit, this));
-
     return this;
-  },
-
-  renderCardForm: function () {
-    React.render(
-      <CardForm csrf={window.csrf} />,
-      document.getElementById('card-form')
-    );
-  },
-
-  renderList: function () {
-    React.render(
-      <CardList contacts={this.collection.toJSON()} />,
-      document.getElementById('card-list')
-    );
   },
 
   onCardSubmit: function (e) {
@@ -71,5 +53,19 @@ module.exports = Backbone.View.extend({
     }).always(function () {
       console.log('save ran');
     });
+  },
+
+  renderCardForm: function () {
+    React.render(
+      <CardForm csrf={window.csrf} onCardSubmit={this.onCardSubmit} />,
+      document.getElementById('card-form')
+    );
+  },
+
+  renderList: function () {
+    React.render(
+      <CardList contacts={this.collection.toJSON()} />,
+      document.getElementById('card-list')
+    );
   }
 });
