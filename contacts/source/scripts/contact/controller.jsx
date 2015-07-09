@@ -38,10 +38,9 @@ module.exports = Backbone.View.extend({
     return this;
   },
 
-  onCardSubmit: function (e) {
-    console.log('saving to collection');
+  onCardSubmit: function (formData) {
+    console.log('collection', this.collection);
     var _this = this;
-    var formData = e.detail;
     var contact = new Model(formData);
     contact.save(null, {
       success: function (model, repsonse) {
