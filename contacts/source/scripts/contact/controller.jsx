@@ -8,10 +8,12 @@ var Model = require('./model');
 var CardList = require('./components').cardList;
 var CardForm = require('./components').cardForm;
 
+var contacts = new Collection();
+
 Backbone.$ = $;
 
 module.exports = Backbone.View.extend({
-  collection: new Collection(),
+  collection: contacts,
 
   initialize: function () {
     var _this = this;
@@ -44,7 +46,7 @@ module.exports = Backbone.View.extend({
     var contact = new Model(formData);
     contact.save(null, {
       success: function (model, repsonse) {
-        _this.collection.add([contact]);
+        contacts.add([contact]);
       },
       error:  function (model, repsonse) {
         console.log('error');
