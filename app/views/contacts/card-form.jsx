@@ -36,26 +36,20 @@ module.exports = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
+    console.log('event: ', e);
     console.log('form data: ', this.state);
-    this.onFormSubmit(this.state);
-  },
-
-  onFormSubmit: function (data) {
-    console.log('about to send event:', data);
-    console.log('this: ', this);
-    var trigger = new CustomEvent('cardSubmit', {detail: data}, false);
-    document.dispatchEvent(trigger);
+    this.props.onCardSubmit(this.state);
     this.setState({
       formSent: true
     });
   },
 
   render: function () {
+    console.log('props', this.props);
     var formSent = this.state.formSent;
     return (
       <form className="cardForm" onSubmit={this.handleSubmit}>
         <div style={{display: formSent ? 'block' : 'none'}}>Sent!</div>
-        <input type="hidden" name="_csrf" valueLink={this.linkState('_csrf')}/>
         <input type="text" placeholder="First" name="firstName" valueLink={this.linkState('firstName')}/>
         <input type="text" placeholder="Last" name="lastName" valueLink={this.linkState('lastName')}/>
         <input type="text" placeholder="Street Address" name="address" valueLink={this.linkState('address')}/>
