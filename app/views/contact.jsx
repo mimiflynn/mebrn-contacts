@@ -9,9 +9,8 @@ var ContactsLayout = React.createClass({
     var _csrf = 'window.csrf = "' + this.props.csrf_token + '"';
     return (
       <DefaultLayout title={this.props.title}>
-        <h1>{this.props.title}</h1>
-        <p>For server side rendering go <a href="/">here</a>.</p>
         <section>
+          <p>For server side rendering go <a href="/">here</a>.</p>
           <div className="row">
             <div className="col-md-8" id="card-form" />
             <div className="col-md-4" id="card-list" />

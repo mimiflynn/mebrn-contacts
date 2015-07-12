@@ -108,8 +108,13 @@ module.exports = React.createClass({
                     <input type="text" placeholder="Email" name="email" valueLink={this.linkState('email')}/>
                   </div>
                 </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="email">Submit</label>
+                  <div className="col-md-5">
+                    <input className="btn btn-primary" type="submit" value="Save"/>
+                  </div>
+                </div>
                 
-                <input type="submit" value="Save"/>
               </fieldset>
             </form>
           </div>
