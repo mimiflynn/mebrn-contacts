@@ -16,8 +16,12 @@ var IndexLayout = React.createClass({
       <DefaultLayout title={this.props.title}>
         <h1>{this.props.title}</h1>
         <p>For client side rendering go <a href="/clientside">here</a>.</p>
-        <div id="card-form" dangerouslySetInnerHTML={{__html: cardForm}} />
-        <div id="card-list" />
+        <section>
+          <div className="row">
+            <div className="col-md-8" id="card-form" dangerouslySetInnerHTML={{__html: cardForm}} />
+            <div className="col-md-4" id="card-list" />
+          </div>
+        </section>
         <script src="/js/app.js"></script>
         <script dangerouslySetInnerHTML={{__html: _csrf}} />
         <script dangerouslySetInnerHTML={{__html: contacts}} />

@@ -1,6 +1,6 @@
 # Contacts
 
-This started off as a MEAN.io contacts app, but I wanted to learn how to use Backbone and React together and here we are now.
+This started off as a MEAN.io contacts app, but I wanted to learn how to use Backbone and React together and render React on the server (aka isomorphic React). Everything is brought together and used serverside and clientside via Express and Browserify.
 
 # Contacts App made with React and Backbone
 
@@ -17,9 +17,12 @@ Goal is to exhibit that:
 
 ```
 gem install compass
+gem install bootstrap-sass
 brew install mongodb
 npm install -g grunt-cli
 npm install -g browserify
+npm install
+npm start
 ```
 
 Be sure mongoDB is running. If you're on a Mac (as I assumed with the `brew` command) there is a preference pane to start mongoDB [here](http://blog.mongodb.org/post/28925264384/macosx-preferences-pane-for-mongodb).
@@ -28,8 +31,12 @@ Be sure mongoDB is running. If you're on a Mac (as I assumed with the `brew` com
 
 ```
 gem install compass
+gem install bootstrap-sass
 apt-get install mongodb
-
+npm install -g grunt-cli
+npm install -g browserify
+npm install
+npm start
 ```
 
 You will need to make sure the MongoDB service is running. 
@@ -50,7 +57,9 @@ Attempting to make the components independent of the framework, so, in this case
 This will allow the components to work on their own and can be available to teams needing the component's functionality but using a framework that better suites their needs.
 
 ## To Do
-- refactor to a Flux like organizational structure
+
+- Edit contact feature
+- create branch to a Flux like organizational structure
 - add CRS
 
 # Boilerplate Info

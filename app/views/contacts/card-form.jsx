@@ -48,19 +48,71 @@ module.exports = React.createClass({
     console.log('props', this.props);
     var formSent = this.state.formSent;
     return (
-      <form className="cardForm" onSubmit={this.handleSubmit}>
-        <div style={{display: formSent ? 'block' : 'none'}}>Sent!</div>
-        <input type="text" placeholder="First" name="firstName" valueLink={this.linkState('firstName')}/>
-        <input type="text" placeholder="Last" name="lastName" valueLink={this.linkState('lastName')}/>
-        <input type="text" placeholder="Street Address" name="address" valueLink={this.linkState('address')}/>
-        <input type="text" placeholder="City" name="city" valueLink={this.linkState('city')}/>
-        <input type="text" placeholder="State" name="state" valueLink={this.linkState('state')}/>
-        <input type="text" placeholder="Zip" name="zip" valueLink={this.linkState('zip')}/>
-        <input type="text" placeholder="Country" name="country" valueLink={this.linkState('country')}/>
-        <input type="text" placeholder="Phone" name="phone" valueLink={this.linkState('phone')}/>
-        <input type="text" placeholder="Email" name="email" valueLink={this.linkState('email')}/>
-        <input type="submit" value="Save"/>
-      </form>
+          <div>
+            <div style={{display: formSent ? 'block' : 'none'}}>Sent!</div>
+            <form className="cardForm form-horizontal" onSubmit={this.handleSubmit}>
+              <fieldset>
+                <legend>Add Contact</legend>
+
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="firstName">First Name</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="First" name="firstName" valueLink={this.linkState('firstName')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="lastName">Last Name</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="Last" name="lastName" valueLink={this.linkState('lastName')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="address">Address</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="Street Address" name="address" valueLink={this.linkState('address')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="city">City</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="City" name="city" valueLink={this.linkState('city')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="state">State</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="State" name="state" valueLink={this.linkState('state')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="zip">Zip</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="Zip" name="zip" valueLink={this.linkState('zip')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="country">Country</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="Country" name="country" valueLink={this.linkState('country')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="phone">Phone</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="Phone" name="phone" valueLink={this.linkState('phone')}/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" for="email">Email</label>
+                  <div className="col-md-5">
+                    <input type="text" placeholder="Email" name="email" valueLink={this.linkState('email')}/>
+                  </div>
+                </div>
+                
+                <input type="submit" value="Save"/>
+              </fieldset>
+            </form>
+          </div>
     );
   }
 });

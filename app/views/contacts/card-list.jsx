@@ -15,9 +15,18 @@ module.exports = React.createClass({
       );
     });
     return (
-      <ul className="cardList">
-        {cards}
-      </ul>
+      <div>
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h3>Contacts</h3>
+          </div>
+          <div className="panel-body">
+            <ul className="cardList">
+              {cards}
+            </ul>
+          </div>
+        </div>
+      </div>
     );
   }
 });

@@ -11,8 +11,12 @@ var ContactsLayout = React.createClass({
       <DefaultLayout title={this.props.title}>
         <h1>{this.props.title}</h1>
         <p>For server side rendering go <a href="/">here</a>.</p>
-        <div id="card-form" />
-        <div id="card-list" />
+        <section>
+          <div className="row">
+            <div className="col-md-8" id="card-form" />
+            <div className="col-md-4" id="card-list" />
+          </div>
+        </section>
         <script src="/js/app.js"></script>
         <script dangerouslySetInnerHTML={{__html: _csrf}} />
       </DefaultLayout>
