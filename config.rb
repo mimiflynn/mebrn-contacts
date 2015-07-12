@@ -1,12 +1,13 @@
 require 'compass/import-once/activate'
+require 'bootstrap-sass'
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "public/css"
-sass_dir = "contacts/source/sass"
-images_dir = "public/img"
-javascripts_dir = "public/js"
+css_dir = "build/css"
+sass_dir = "source/sass"
+images_dir = "build/img"
+javascripts_dir = "build/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

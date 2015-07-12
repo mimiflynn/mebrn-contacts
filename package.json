@@ -38,7 +38,8 @@
     "react": "^0.13.3",
     "swig": "^1.4.2",
     "view-helpers": "^0.1.5",
-    "winston": "^0.8.0"
+    "winston": "^0.8.0",
+    "bootstrap": "^3.3.5"
   },
   "devDependencies": {
     "browserify": "^9.0.8",

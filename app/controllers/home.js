@@ -9,7 +9,7 @@ exports.serverside = function (req, res) {
       contacts: contact
     })
   });
-}
+};
 
 exports.clientside = function (req, res) {
   res.render('contact', {

@@ -3,10 +3,10 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
-@import "contact/card";
-@import "contact/cardForm";
-
 body {
   margin: 1em;
+}
+
+.content {
+  margin-top: 70px;
 }
