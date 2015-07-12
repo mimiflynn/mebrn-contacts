@@ -13,6 +13,8 @@ Goal is to exhibit that:
 
 ## Requirements
 
+### Mac OS X
+
 ```
 gem install compass
 brew install mongodb
@@ -21,6 +23,21 @@ npm install -g browserify
 ```
 
 Be sure mongoDB is running. If you're on a Mac (as I assumed with the `brew` command) there is a preference pane to start mongoDB [here](http://blog.mongodb.org/post/28925264384/macosx-preferences-pane-for-mongodb).
+
+### Linux
+
+```
+gem install compass
+apt-get install mongodb
+
+```
+
+You will need to make sure the MongoDB service is running. 
+
+### Other
+
+[I have created a Vagrant box for the MEAN stack.](https://github.com/mimiflynn/vagrant) I can also be used for this project.
+
 
 ## Development
 
