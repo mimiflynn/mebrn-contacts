@@ -2,6 +2,9 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      build: ['build']
+    },
     concurrent: {
       target: {
         tasks: ['watch', 'connect:server'],
@@ -54,6 +57,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-connect');
   grunt.loadNpmTasks('grunt-jsxhint');
