@@ -10,6 +10,7 @@
     "node": "0.10.x"
   },
   "scripts": {
+    "preinstall": "gem install compass && gem install bootstrap-sass",
     "start": "NODE_PATH=./config:./app/controllers NODE_ENV=development ./node_modules/.bin/nodemon server.js",
     "test": "make test"
   },
