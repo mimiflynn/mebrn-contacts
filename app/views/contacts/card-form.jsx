@@ -55,66 +55,66 @@ module.exports = React.createClass({
                 <legend>Add Contact</legend>
 
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="firstName">First Name</label>
+                  <label className="col-md-4 control-label">First Name</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="First" name="firstName" valueLink={this.linkState('firstName')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="lastName">Last Name</label>
+                  <label className="col-md-4 control-label">Last Name</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="Last" name="lastName" valueLink={this.linkState('lastName')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="address">Address</label>
+                  <label className="col-md-4 control-label">Address</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="Street Address" name="address" valueLink={this.linkState('address')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="city">City</label>
+                  <label className="col-md-4 control-label">City</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="City" name="city" valueLink={this.linkState('city')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="state">State</label>
+                  <label className="col-md-4 control-label">State</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="State" name="state" valueLink={this.linkState('state')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="zip">Zip</label>
+                  <label className="col-md-4 control-label">Zip</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="Zip" name="zip" valueLink={this.linkState('zip')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="country">Country</label>
+                  <label className="col-md-4 control-label">Country</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="Country" name="country" valueLink={this.linkState('country')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="phone">Phone</label>
+                  <label className="col-md-4 control-label">Phone</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="Phone" name="phone" valueLink={this.linkState('phone')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="email">Email</label>
+                  <label className="col-md-4 control-label">Email</label>
                   <div className="col-md-5">
                     <input type="text" placeholder="Email" name="email" valueLink={this.linkState('email')}/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="col-md-4 control-label" for="email">Submit</label>
+                  <label className="col-md-4 control-label">Submit</label>
                   <div className="col-md-5">
                     <input className="btn btn-primary" type="submit" value="Save"/>
                   </div>
                 </div>
-                
+
               </fieldset>
             </form>
           </div>
